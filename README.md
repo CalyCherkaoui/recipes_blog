@@ -35,7 +35,7 @@ Home page with two scenarios : When user is Loged-in and when not:
 
 ## Models
 
-## Getting started
+## Development : Getting started
 
 To get a local copy of the repository please run the following commands on your terminal:
 
@@ -45,6 +45,7 @@ $ cd gourmet_blog
 $ git checkout development
 $ bundle install
 $ yarn install --check-files
+$ rails db:create
 $ rails db:migrate
 $ rails server
 ```
