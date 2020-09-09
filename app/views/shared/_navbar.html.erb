@@ -1,0 +1,44 @@
+<header class="myheader">
+  <div class="my-brand-nav">
+      <%= link_to root_path, class: "logo" do %>
+        Keto <span>Gourmet</span>
+      <%end %>
+  </div>
+  <nav class="my-nav-wrapper">
+    <ul class="my-nav-list">
+        <li class="nav-list__item">
+          <%= link_to root_path, class: "nav-list__link" do %>
+            <i class="fas fa-concierge-bell"></i> Recipes
+          <% end %>
+          <!-- <a href="index.html" class="nav-list__link current"><i class="fas fa-concierge-bell"></i> Recipes</a> -->
+        </li>
+        <li class="nav-list__item">
+          <%= link_to root_path, class: "nav-list__link" do %>
+          <i class="fas fa-rss"></i> Subscribe
+          <% end %>
+          <!-- <a href="#" class="nav-list__link"><i class="fas fa-rss"></i> Subscribe</a> -->
+        </li>
+        <li class="nav-list__item">
+          <%= link_to root_path, class: "nav-list__link" do %>
+            <i class="far fa-user"></i> Profile
+          <% end %>
+          <!-- <a href="result.html" class="nav-list__link"><i class="far fa-user"></i> Profile</a> -->
+        </li>
+        <li class="nav-list__item">
+          <%= link_to "login", root_path, class: "nav-list__link" %>
+          <!-- <a href="#" class="nav-list__link">Login</a> -->
+        </li>
+        <li class="nav-list__item">
+          <%= link_to "Signup", root_path, class: "nav-list__link" %>
+          <!-- <a href="#" class="nav-list__link">Signup</a> -->
+        </li>
+        <li class="nav-list__item">
+          <%= link_to "logout", root_path, class: "nav-list__link" %>
+          <!-- <a href="#" class="nav-list__link">Logout</a> -->
+        </li>
+    </ul>
+    <div class="my-hamburger-btn">
+      <div class="hamburger-btn__line"></div>
+    </div>
+  </nav>
+</header>

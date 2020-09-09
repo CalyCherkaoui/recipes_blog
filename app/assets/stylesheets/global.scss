@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  min-width: 22rem;
+}
+
+body {
+  background-color: gray;
+  width: 100%;
+  min-width: 22rem;
+}
