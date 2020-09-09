@@ -1,3 +1,4 @@
+/* global */
 *,
 *::after,
 *::before {
@@ -15,4 +16,5 @@ body {
   background-color: gray;
   width: 100%;
   min-width: 22rem;
+  display: block;
 }

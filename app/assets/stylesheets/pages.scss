@@ -33,7 +33,6 @@ $classic-blue: #0f4c81;
     opacity: 1;
   }
 }
-
 /* navigation */
 
 .myheader {
@@ -46,21 +45,6 @@ $classic-blue: #0f4c81;
   background-color: $my_dark_main;
   position: fixed;
   z-index: 4000;
-  a {
-    text-decoration: none;
-  }
-}
-
-.mysticky-header {
-  width: 100%;
-  margin: 0;
-  padding: 0.3rem 0.1rem 0.8rem 0.1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: $my_dark_main;
-  position: fixed;
-  z-index: 3999;
   a {
     text-decoration: none;
   }
@@ -229,3 +213,43 @@ $classic-blue: #0f4c81;
   }
 }
 
+/* Footer */
+
+footer {
+  height: 25vh;
+  background-color: $my_light_second;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: [row1-start] 3fr [row1-end row2-start] 1fr [row2-end];
+  grid-template-areas: 
+    "subscribe follow about"
+    "copyright copyright copyright";
+  column-gap: 1em;
+  row-gap: 1em;
+}
+
+.col_subscribe {
+  grid-area: subscribe;
+}
+
+.col_contact {
+  grid-area: follow;
+}
+
+.col_about {
+  grid-area: about;
+}
+
+.row_copyright {
+  grid-area: copyright;
+}
+
+/* Home page */
+
+.hero_section {
+  height: 100vh;
+  background: url(asset_path("hero_background.jpg"));
+  background-repeat: no-repeat;
+  background-size: cover;
+}
