@@ -2,15 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 /* Palette */
-$my_dark_main: #0A164E;
+// $my_dark_main: #0A164E;
+$my_dark_main: #1b2d38;
 $my_light_second: #2EB641;
 $tangerine: #da4221;
 $my-light-blue: #2ab2c0;
 $text-dark: #272727;
 $classic-blue: #0f4c81;
+$font_text: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+// $font_text: 'Open Sans', sans-serif;
+$font_logo: 'Playfair Display', serif;
+$font_logo_keto: 'Playfair Display', serif;
+
 
 @keyframes fading {
   0% {
@@ -51,21 +58,24 @@ $classic-blue: #0f4c81;
 }
 
 .my-brand-nav {
-  padding-left: 2.5rem;
+  padding-left: 2rem;
   padding-right: 1.5rem;
-  font-size: 2.3rem;
-  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  // font-family: 'Playfair Display', serif;
   font-weight: 900;
   overflow: hidden;
   .logo {
     overflow: hidden;
+    text-decoration: none !important;
     color: $my_light_second;
+    font-family: $font_logo_keto !important;
 
     &:hover {
       color: $my_light_second;
     }
 
     span {
+      font-family: $font_logo;
       color: whitesmoke;
     }
   }
@@ -88,7 +98,7 @@ $classic-blue: #0f4c81;
 }
 
 .nav-list__link {
-  font-size: 1rem;
+  font-size: 0.9rem;
   // font-family: "Ramabhadra", sans-serif;
   // font-family: 'Playfair Display', sans-serif;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -124,13 +134,13 @@ $classic-blue: #0f4c81;
 }
 
 .my-hamburger-btn {
-  padding-left: 1.5rem;
+  padding-left: 1rem;
   padding-right: 1.5rem;
 }
 
 .my-hamburger-btn .hamburger-btn__line {
-  width: 3rem;
-  height: 4px;
+  width: 2.5rem;
+  height: 3px;
   background-color: $my_light_second;
   border-radius: 3px;
   cursor: pointer;
@@ -140,8 +150,8 @@ $classic-blue: #0f4c81;
 .my-hamburger-btn .hamburger-btn__line::after {
   content: "";
   position: absolute;
-  width: 3rem;
-  height: 4px;
+  width: 2.5rem;
+  height: 3px;
   background-color: $my_light_second;
   border-radius: 3px;
   cursor: pointer;
@@ -216,33 +226,69 @@ $classic-blue: #0f4c81;
 /* Footer */
 
 footer {
-  height: 25vh;
-  background-color: $my_light_second;
-
+  height: 10vh;
+  background-color: $my_dark_main;
+  color: white;
+  font-size: 0.9rem;
+  font-family: $font_text ;
+  overflow: hidden;
+  padding: 0.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: [row1-start] 3fr [row1-end row2-start] 1fr [row2-end];
+  grid-template-rows: [row1-start] 2fr [row1-end row2-start] 1fr [row2-end];
   grid-template-areas: 
-    "subscribe follow about"
+    "brand navigation navigation"
     "copyright copyright copyright";
-  column-gap: 1em;
-  row-gap: 1em;
+  column-gap: 1rem;
+  row-gap: 1rem;
 }
 
-.col_subscribe {
-  grid-area: subscribe;
+
+.brand_footer {
+  grid-area: brand;
+  overflow: hidden;
 }
 
-.col_contact {
-  grid-area: follow;
-}
+.navigation-footer {
+  grid-area: navigation;
+  overflow: hidden;
+  justify-self: end;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 
+    "follow links";
+  column-gap: 0.3rem;
 
-.col_about {
-  grid-area: about;
+  .col_contact {
+    grid-area: follow;
+    place-self: center;
+    i {
+      font-size: 1rem;
+      padding: 0.3rem;
+    }
+  }
+
+  .footer-links {
+    grid-area: links;
+    place-self: center;
+    display: inline-flex;
+    div {
+      padding: 0.5rem;
+    }
+  }
+
 }
 
 .row_copyright {
   grid-area: copyright;
+  // align-self: center;
+  place-self: center;
+  font-size: 0.7rem !important;
+  i {
+    color: $tangerine;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 /* Home page */
