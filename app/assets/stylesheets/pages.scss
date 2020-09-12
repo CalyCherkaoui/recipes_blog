@@ -64,20 +64,22 @@ $font_logo_keto: 'Playfair Display', serif;
   // font-family: 'Playfair Display', serif;
   font-weight: 900;
   overflow: hidden;
-  .logo {
-    overflow: hidden;
-    text-decoration: none !important;
+}
+
+.logo {
+  font-size: inherit;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: $my_light_second;
+  font-family: $font_logo_keto !important;
+
+  &:hover {
     color: $my_light_second;
-    font-family: $font_logo_keto !important;
+  }
 
-    &:hover {
-      color: $my_light_second;
-    }
-
-    span {
-      font-family: $font_logo;
-      color: whitesmoke;
-    }
+  span {
+    font-family: $font_logo;
+    color: whitesmoke;
   }
 }
 
@@ -249,6 +251,15 @@ footer {
   overflow: hidden;
 }
 
+.my-logo-footer {
+  padding-left: 1.3rem;
+  padding-right: 1rem;
+  font-size: 1.3rem;
+  // font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  overflow: hidden;
+}
+
 .navigation-footer {
   grid-area: navigation;
   overflow: hidden;
@@ -263,7 +274,7 @@ footer {
     grid-area: follow;
     place-self: center;
     i {
-      font-size: 1rem;
+      font-size: 0.9rem;
       padding: 0.3rem;
     }
   }
@@ -288,6 +299,75 @@ footer {
     color: $tangerine;
     padding: 0;
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  footer {
+    height: 15vh;
+    font-size: 0.7rem;
+    overflow: hidden;
+    padding: 0.2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: [row1-start] 1fr [row1-end row2-start] 2fr [row2-end row3-start] 1fr[row3-end];
+    grid-template-areas: 
+      "brand"
+      "navigation"
+      "copyright";
+    column-gap: 1rem;
+    row-gap: 1rem;
+  }
+
+  .brand_footer {
+    grid-area: brand;
+    place-self: center;
+    overflow: hidden;
+  }
+
+  .my-logo-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.9rem;
+    // font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+
+  .navigation-footer {
+    grid-area: navigation;
+    overflow: hidden;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+
+    .col_contact {
+      justify-self: center;
+      i {
+        font-size: 0.9rem;
+        padding: 0.3rem;
+      }
+    }
+
+    .footer-links {
+      justify-self: center;
+      display: inline-flex;
+      div {
+        padding: 0.5rem;
+      }
+    }
+
+  }
+
+  .row_copyright {
+    grid-area: copyright;
+    // align-self: center;
+    place-self: center;
+    font-size: 0.5rem !important;
+    i {
+      color: $tangerine;
+      padding: 0;
+      margin: 0;
+    }
   }
 }
 
