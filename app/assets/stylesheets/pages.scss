@@ -378,4 +378,19 @@ footer {
   background: url(asset_path("hero_background.jpg"));
   background-repeat: no-repeat;
   background-size: cover;
+  display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      ". container";
 }
+
+.hero_container {
+  grid-area: container;
+  justify-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
