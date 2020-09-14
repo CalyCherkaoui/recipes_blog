@@ -17,7 +17,7 @@ $font_text: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 // $font_text: 'Open Sans', sans-serif;
 $font_logo: 'Playfair Display', serif;
 $font_logo_keto: 'Playfair Display', serif;
-
+$font_article_title: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 @keyframes fading {
   0% {
@@ -578,3 +578,340 @@ footer {
     display: none;
   }
 }
+
+/* sections globals*/
+
+.section_title {
+  font-size: 1.3rem;
+  font-family: $font_logo_keto;
+  font-weight: 700;
+  color: $my_dark_main;
+  span {
+    padding: 0 1rem;
+    background-color: $my_light_second;
+    margin-right: 0.5rem;
+  }
+}
+
+/* Latest articles section */
+
+.latest_articles {
+  padding: 3rem 0 2rem 0;
+}
+
+.latest_articles_container {
+  // background-color: $tangerine;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+      "article article article aside"
+      "recipe video tag aside";
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+  justify-items: stretch;
+}
+
+
+@media screen and (max-width: 809px) {
+  .latest_articles_container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.latest_article {
+  grid-area: article;
+
+  .latest_article_img {
+    width: 100%;
+    height: auto;
+  }
+
+  .latest_article_text {
+    padding: 1rem 0 1rem 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "title title"
+        "text text"
+        "meta meta";
+
+    .latest_article_text_title {
+      grid-area: title;
+      font-size: 2.2rem;
+      font-family: $font_article_title;
+      font-weight: 700;
+      padding: 0.5rem 0 0.5rem 0;
+      color: $my_dark_main;
+    }
+
+    .latest_article_text_short {
+      grid-area: text;
+      font-size: 1rem;
+      font-family: $font_text;
+      color: $my_dark_main;
+      padding: 0.8rem 0 0.8rem 0;
+
+    }
+
+    .latest_article_text_meta {
+      grid-area: meta;
+      padding: 1rem;
+      justify-self: end;
+      .rubric {
+        font-size: 0.8rem;
+        font-family: $font_logo_keto;
+        font-weight: 700;
+        color: $my_light_second;
+        padding: 0.2rem;
+        border: 2px solid $my_light_second;
+        border-radius: 3px;
+      }
+      .author {
+        font-size: 0.8rem;
+        font-family: $font_article_title;
+        color: $my_dark_main;
+        padding: 0.5rem;
+      }
+    }
+  }
+
+}
+
+.latest_recipe {
+  grid-area: recipe;
+  // background-color: palevioletred;
+  border-radius: 10px;
+
+  .recipe_card_img {
+    position: relative;
+    border-radius: 0 0 60px 0;
+    padding: 0;
+    height: fit-content;
+
+    .recipe_card_img_img {
+      width: 100%;
+      height: auto;
+    }
+
+    .recipe_card_image_meta {
+      padding: 1rem;
+      font-size: 1rem;
+      color: white;
+      font-family: $font_logo_keto;
+      font-weight: 600;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    &::before {
+      content: "";
+      background-color: $text-dark;
+      // filter: blur(20px);
+      opacity: 0.6;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      &:hover {
+        display: none;
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  .recipe_card_title {
+    padding: 10%;
+    // font-family: $font_logo_keto;
+    font-family: $font_article_title;
+    color: $my_dark_main;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .recipe_card_title_stats {
+    // background-color: $my_dark_main;
+    padding: 0.3rem 0 0.3rem 0;
+    color: $classic-blue;
+    font-size: 0.8rem;
+    font-family: $font_article_title;
+    font-weight: 700;
+    line-height: 1.5rem;
+    text-align: end;
+    span {
+      margin-right: 0.3rem;
+    }
+    i {
+      font-size: 0.8rem;
+      margin-right: 0;
+      padding: 2px 1px 0 2px ;
+    }
+  }
+
+}
+
+.latest_video {
+  grid-area: video;
+  // background-color: rebeccapurple;
+
+  .recipe_card_img {
+    position: relative;
+    padding: 0;
+    height: fit-content;
+
+    .recipe_card_img_img {
+      width: 100%;
+      height: auto;
+    }
+
+    .recipe_card_image_meta {
+      padding: 1rem;
+      font-size: 1rem;
+      color: white;
+      font-family: $font_logo_keto;
+      font-weight: 600;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    &::before {
+      content: "";
+      background-color: $text-dark;
+      // filter: blur(20px);
+      opacity: 0.6;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      &:hover {
+        display: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .recipe_video_title {
+    padding: 1rem 0 1rem 0;
+    font-family: $font_article_title;
+    color: $my_dark_main;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .recipe_video_tags {
+    display: flex;
+    flex-direction: row;
+    .tag {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-family: $font_article_title;
+      font-weight: 700;
+      line-height: 1.5rem;
+      color: $my_light_second;
+    }
+    span {
+      padding: 0 0.2rem 0 0.2rem;
+      margin: 0 1px;
+      // border: 0.5px solid $classic-blue;
+      // border-radius: 10px;
+    }
+  }
+
+}
+
+.latest_topic {
+  grid-area: tag;
+  // background-color: greenyellow;
+  border-radius: 8px;
+  border: $my_light_second 3px dashed;
+  padding: 2.5rem;
+  margin: 0 0 2rem 0;
+  p {
+    font-size: 1.3rem;
+    font-family: $font_article_title;
+    font-weight: 700;
+    padding: 1rem 0 1rem 0;
+    color: $my_dark_main;
+  }
+  .topic1 {
+    border-bottom: $my_light_second 3px dashed;
+  }
+}
+
+.latest_aside {
+  grid-area: aside;
+  padding: 0 2rem;
+}
+
+.latest_aside_adv {
+  margin: 0 0 1rem 0;
+  .adv_img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.latest_aside_trends {
+  border-radius: 8px;
+  border: $my_light_second 3px dashed;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-size: 1.3rem;
+    font-family: $font_article_title;
+    font-weight: 800;
+    padding: 1rem 0 1rem 0;
+    color: $my_dark_main;
+    text-align: center;
+    border-bottom: $my_light_second 3px dashed;
+  }
+}
+
+.trend_articles {
+  display: flex;
+  flex-direction: column;
+  .trend_article {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.trend_article_img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.trend_article_text {
+  padding: 0 1rem 0 1rem;
+  font-size: 1rem;
+  font-family: $font_article_title;
+  font-weight: 800;
+  color: $my_dark_main;
+}
+
+@media screen and (max-width: 1000px) {
+  .trend_article_text {
+    padding: 0 1rem 0 1rem;
+    font-size: 0.8rem;
+    font-family: $font_article_title;
+    font-weight: 500;
+    color: $my_dark_main;
+  }
+}
+
+
