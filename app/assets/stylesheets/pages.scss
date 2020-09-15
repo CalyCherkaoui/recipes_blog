@@ -7,6 +7,7 @@
 
 /* Palette */
 // $my_dark_main: #0A164E;
+$my_nav_backg: black;
 $my_dark_main: #1b2d38;
 $my_light_second: #2EB641;
 $tangerine: #da4221;
@@ -49,7 +50,7 @@ $font_article_title: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxyg
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $my_dark_main;
+  background-color: $my_nav_backg;
   position: fixed;
   z-index: 4000;
   a {
@@ -378,8 +379,11 @@ footer {
   background: url(asset_path("hero_background.jpg"));
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  // object-fit: fill;
   display: grid;
-    grid-template-columns: auto 46%;
+    grid-template-columns: auto 60%;
     grid-template-rows: auto;
     grid-template-areas: 
       ". container";
@@ -388,7 +392,8 @@ footer {
 
 .hero_container {
   margin: 0;
-  padding: 6rem 4.5rem 2rem 4.5rem;
+  // padding: 6rem 4.5rem 2rem 4.5rem;
+  padding: 22%;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
@@ -419,17 +424,17 @@ footer {
   .hero_rubric {
     overflow-x: hidden;
     overflow-y: hidden;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     padding-top: 1rem;
     span {
-      padding: 0.5rem;
+      padding: 0.6rem;
       text-transform: uppercase;
       font-size: 1rem;
-      font-family: "Playfair Display", serif;
+      font-family: $font_logo_keto;
       font-weight: 700;
       color: $my_light_second;
-      border: $my_light_second 3px solid;
-      border-radius: 2px;
+      border: $my_light_second 3px dashed;
+      border-radius: 10px;
     }
   }
 
@@ -438,8 +443,8 @@ footer {
     overflow-y: hidden;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    font-size: 3rem;
-    font-family: "Playfair Display", serif;
+    font-size: 5vh;
+    font-family: $font_logo_keto;
     font-weight: 700;
     color: white;
   }
@@ -447,7 +452,7 @@ footer {
   .hero_subtitle {
     padding-top: 0.3rem;
     padding-bottom: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 3vh;
     font-family: $font_text;
     font-weight: 500;
     color: lighten($color: $my_light_second, $amount: 40%);
@@ -469,14 +474,14 @@ footer {
   .rubric {
     text-transform: uppercase;
     font-size: 0.9rem;
-    font-family: "Playfair Display", serif;
+    font-family: $font_logo_keto;
     font-weight: 700;
     color: $my_light_second;
   }
 
   .hero_title_second {
     padding-bottom: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 2.8vh;
     font-family: $font_text;
     font-weight: 700;
     color: lighten($color: $my_light_second, $amount: 55%);
@@ -484,19 +489,18 @@ footer {
 }
 
 .new_release {
-  text-align: center;
-  padding-top: 3rem;
+  padding-top: 2rem;
 
   font-family: $font_text;
   opacity: 0.6;
 
   .number {
-    font-size: 3.5rem;
+    font-size: 4vh;
     color: lighten($color: $my_light_second, $amount: 30%);
   }
 
   .release {
-    font-size: 3rem;
+    font-size: 4vh;
     color: whitesmoke;
   }
 }
@@ -510,15 +514,13 @@ footer {
       grid-template-areas:
         "container";
   }
-
-  .hero_container {
-    padding-top: 10rem;
-  }
 }
 
 @media screen and (max-width: 809px) {
   .hero_section {
-    max-height: 60vh;
+    max-height: 80vh;
+    // min-height: 80vh;
+    overflow: hidden;
     display: grid;
       grid-template-columns: 100%;
       grid-template-rows: 1fr 1fr;
@@ -528,18 +530,20 @@ footer {
   }
 
   .hero_container {
+    overflow: hidden;
     margin: 0;
     padding: 1rem;
     grid-area: container;
   }
 
   .hero_article {
+    overflow: hidden;
     .hero_rubric {
       padding: 0.9rem 0 0.9rem 0;
       span {
         padding: 0.5rem;
         text-transform: uppercase;
-        font-size: 0.8rem;
+        font-size: 2vh;
         font-family: "Playfair Display", serif;
         font-weight: 400;
         color: $my_light_second;
@@ -549,7 +553,7 @@ footer {
     .hero_title {
       padding-top: 0.8rem;
       padding-bottom: 0.5rem;
-      font-size: 1.9rem;
+      font-size: 4vh;
       font-family: "Playfair Display", serif;
       font-weight: 700;
       color: white;
