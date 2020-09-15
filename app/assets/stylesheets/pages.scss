@@ -685,78 +685,79 @@ footer {
   grid-area: recipe;
   // background-color: palevioletred;
   border-radius: 10px;
+}
 
-  .recipe_card_img {
-    position: relative;
-    border-radius: 0 0 60px 0;
-    padding: 0;
-    height: fit-content;
+// recipe card
+.recipe_card_img {
+  position: relative;
+  border-radius: 0 0 60px 0;
+  padding: 0;
+  height: fit-content;
 
-    .recipe_card_img_img {
-      width: 100%;
-      height: auto;
-    }
-
-    .recipe_card_image_meta {
-      padding: 1rem;
-      font-size: 1rem;
-      color: white;
-      font-family: $font_logo_keto;
-      font-weight: 600;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-    }
-
-    &::before {
-      content: "";
-      background-color: $text-dark;
-      // filter: blur(20px);
-      opacity: 0.6;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      &:hover {
-        display: none;
-        cursor: pointer;
-      }
-    }
-
+  .recipe_card_img_img {
+    width: 100%;
+    height: auto;
   }
 
-  .recipe_card_title {
-    padding: 10%;
-    // font-family: $font_logo_keto;
-    font-family: $font_article_title;
-    color: $my_dark_main;
+  .recipe_card_image_meta {
+    padding: 1rem;
     font-size: 1rem;
-    font-weight: 700;
-    text-align: center;
+    color: white;
+    font-family: $font_logo_keto;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
   }
 
-  .recipe_card_title_stats {
-    // background-color: $my_dark_main;
-    padding: 0.3rem 0 0.3rem 0;
-    color: $classic-blue;
+  &::before {
+    content: "";
+    background-color: $text-dark;
+    // filter: blur(20px);
+    opacity: 0.6;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    &:hover {
+      display: none;
+      cursor: pointer;
+    }
+  }
+
+}
+
+.recipe_card_title {
+  padding: 10%;
+  // background-color: white;
+  // font-family: $font_logo_keto;
+  font-family: $font_article_title;
+  color: $my_dark_main;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.recipe_card_title_stats {
+  // background-color: white;
+  padding: 0.3rem 0 0.3rem 0;
+  color: $classic-blue;
+  font-size: 0.8rem;
+  font-family: $font_article_title;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: end;
+  span {
+    margin-right: 0.3rem;
+  }
+  i {
     font-size: 0.8rem;
-    font-family: $font_article_title;
-    font-weight: 700;
-    line-height: 1.5rem;
-    text-align: end;
-    span {
-      margin-right: 0.3rem;
-    }
-    i {
-      font-size: 0.8rem;
-      margin-right: 0;
-      padding: 2px 1px 0 2px ;
-    }
+    margin-right: 0;
+    padding: 2px 1px 0 2px ;
   }
-
 }
 
 .latest_video {
@@ -915,3 +916,174 @@ footer {
 }
 
 
+.top_recipes {
+  background-color: $my_dark_main;
+  padding: 1.5rem 0 1.5rem 0;
+}
+
+.section_dark_title {
+    font-size: 1.3rem;
+    font-family: $font_logo_keto;
+    font-weight: 700;
+    color: white;
+    span {
+      padding: 0 1rem;
+      background-color: $my_light_second;
+      margin-right: 0.5rem;
+    }
+}
+
+.top_recipe_cards_container {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  .top_recipe_card {
+    padding: 0.5rem;
+    width: 15rem;
+    // margin-right: 3rem;
+    // background-color: white;
+    border-radius: 15px;
+    border: 2px white dashed;
+    overflow: hidden;
+    margin-top: 2rem;
+
+    .top_recipe_card_img {
+      position: relative;
+      border-radius:  15px  15px 100px 0;
+      padding: 0;
+      height: fit-content;
+    
+      .top_recipe_card_img_img {
+        width: 100%;
+        height: auto;
+      }
+    
+      .top_recipe_card_image_meta {
+        padding: 1rem;
+        font-size: 2rem;
+        color: $tangerine;
+        font-family: $font_logo_keto;
+        font-weight: 600;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+
+    }
+    
+    .top_recipe_card_title {
+      padding: 10%;
+      // font-family: $font_logo_keto;
+      font-family: $font_article_title;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    
+    .top_recipe_card_title_stats {
+      // background-color: white;
+      padding: 0.3rem 0 0.3rem 0;
+      color: $my-light-blue;
+      font-size: 0.8rem;
+      font-family: $font_article_title;
+      font-weight: 700;
+      line-height: 1.5rem;
+      text-align: center;
+      span {
+        margin-right: 0.3rem;
+      }
+      i {
+        font-size: 0.8rem;
+        margin-right: 0;
+        padding: 2px 1px 0 2px ;
+      }
+    }
+  }
+
+}
+
+// author section
+
+.top_authors {
+  background-color: $my_dark_main;
+  padding: 1.5rem 0 1.5rem 0;
+}
+
+.top_author_cards_container {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  .top_author_card {
+    padding: 0.5rem;
+    width: 15rem;
+    // margin-right: 3rem;
+    // background-color: white;
+    border-radius: 15px;
+    border: 2px white dashed;
+    overflow: hidden;
+    margin-top: 2rem;
+
+    .top_author_card_img {
+      position: relative;
+      border-radius:  15px  15px 0 0;
+      padding: 0;
+      height: fit-content;
+    
+      .top_author_card_img_img {
+        width: 100%;
+        height: auto;
+      }
+    
+      .top_author_card_image_meta {
+        padding: 1rem;
+        font-size: 1rem;
+        color: $tangerine;
+        font-family: $font_logo_keto;
+        font-weight: 600;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+
+    }
+    
+    .top_author_card_title {
+      padding: 10%;
+      // font-family: $font_logo_keto;
+      font-family: $font_article_title;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    
+    .top_author_card_title_stats {
+      // background-color: white;
+      padding: 0.3rem 0 0.3rem 0;
+      color: $my-light-blue;
+      font-size: 0.8rem;
+      font-family: $font_article_title;
+      font-weight: 700;
+      line-height: 1.5rem;
+      text-align: center;
+      span {
+        margin-right: 0.3rem;
+      }
+      i {
+        font-size: 0.8rem;
+        margin-right: 0;
+        padding: 2px 1px 0 2px ;
+      }
+    }
+  }
+
+}
